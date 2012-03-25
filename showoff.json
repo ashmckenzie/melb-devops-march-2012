@@ -1,0 +1,11 @@
+{
+  "name": "Deployment & Operations at PlayUp",
+  "description": "",
+  "author": "Ash McKenzie",
+  "templates" : {
+    "default" : "default.tpl"
+  },
+  "sections": [
+    { "section": "one" }
+  ]
+}
