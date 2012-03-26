@@ -6,6 +6,6 @@
     "default" : "default.tpl"
   },
   "sections": [
-    { "section": "one" }
+    { "section": "slides" }
   ]
 }
