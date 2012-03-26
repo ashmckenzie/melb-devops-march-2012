@@ -16,6 +16,11 @@ h1, h2, h3, h4 {
   line-height: 1.3em;
 }
 
+#footer {
+  background: #FFF;
+  color: #CCC;
+}
+
 .content > ul {
   font-size: 2em ;
 }

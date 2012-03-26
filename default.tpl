@@ -3,5 +3,5 @@
 <div>
 
 <div id="logo">
-  <img src="file/playup-logo.png" />
+  <img src="file/playup-logo-small.png" />
 </div>
