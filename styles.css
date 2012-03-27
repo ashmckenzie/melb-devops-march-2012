@@ -76,10 +76,21 @@ code {
   margin-left: 0 !important;
 }
 
-/*#slide-5,
-#slide-6 {
+#slide-17 {
   margin-top: -50px;
-}*/
+}
+
+#slide-29 {
+  margin-top: -160px;
+}
+
+#slide-30 {
+  margin-top: -160px;
+}
+
+#slide-33 {
+  margin-top: -160px;
+}
 
 #slide-13 .content > ul > li > ul > li {
   left: 300px;

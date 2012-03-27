@@ -50,7 +50,7 @@
 
 # JSON API #
 
-* Consistent across all sports, RESTful and<br/>self discoverable
+* Consistent across all sports, RESTful<br/>and discoverable
 * Each sport, league, round and constest has a unique UID<br/>- great for caching
 * Utilise HTTP Accept header for versioning
 * Rails based
@@ -287,12 +287,12 @@
 
 # Current Infrastructure #
 
-.notes self-discoverable meaning JSON has links to other JSON
+.notes discoverable meaning JSON has links to other JSON
 
 ## API ##
 
 * Two AWS instances in us-west-1
-* RESTful, self-discoverable JSON API
+* RESTful, discoverable JSON API
 * AWS ELB -> Varnish -> nginx -> Passenger -> Rails
 * Vary our Cache-Control HTTP header depending on the content<br/>- short for live contests<br/>- longer for finished contests
 * Reads from replicated MySQL slave
@@ -324,8 +324,6 @@ and how we work now
 # Past #
 
 <img src="horse-and-cart.jpg" alt="Horse and cart" />
-
-FIX HEIGHT
 
 * AWS based
 * Very little automated testing
