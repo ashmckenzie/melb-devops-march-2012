@@ -255,9 +255,9 @@
 * API boxes
 * Redundancy across regions / MySQL
 
-!SLIDE
+!SLIDE[tpl=code]
 
-DIAGRAMS HERE
+<img src="sportsdata-prod.png" alt="Sports Data Production" width="1024" style="top: -360px; left: -25px; position: relative"/>
 
 
 !SLIDE
