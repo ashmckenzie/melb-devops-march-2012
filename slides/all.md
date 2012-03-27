@@ -22,7 +22,7 @@
 
 !SLIDE bullets
 
-<img src="playup-logo.png" alt="PlayUp logo" height="60" />
+<img src="playup-logo.png" alt="PlayUp logo" height="80" />
 
 * We build applications and games around live sport
 * We're obsessed with sport, ALL sport!
