@@ -27,6 +27,8 @@
 * We build applications and games around live sport
 * Majority of development in Melbourne office
 * Just released v2 of our iOS app
+* Web app [http://beta.playup.com](http://beta.playup.com)
+* Android app coming
 
 
 !SLIDE bullets smbullets
@@ -39,11 +41,37 @@
 * Constantly adding new sports and leagues
 
 
+!SLIDE bullets
+
+# Our clients #
+
+<img src="playup-ios-logo.png" alt="PlayUp iOS logo" />
+
+* PlayUp iOS app
+* PlayUp Android app (coming soon)
+* A number of internal R&D apps
+
+ADD SCREENSHOTS
+
+
+!SLIDE bullets
+
+# Infrastructure #
+
+* Importers
+* API boxes
+* Redundancy across regions / MySQL
+
+!SLIDE
+
+DIAGRAMS HERE
+
+
 !SLIDE bullets smbullets
 
 # JSON API #
 
-* Consistent across all sports, RESTful<br/>and self discoverable
+* Consistent across all sports, RESTful and<br/>self discoverable
 * Each sport, league, round and constest has a unique UID
 * Utilises HTTP Accept header for versioning
 * Rails based
@@ -195,19 +223,6 @@
     }
 
 
-
-
-!SLIDE bullets
-
-# Our clients #
-
-<img src="playup-ios-logo.jpg" alt="PlayUp iOS logo" />
-
-* PlayUp iOS app
-* PlayUp Android app (coming soon)
-* A number of internal R&D apps
-
-
 !SLIDE
 
 # Setup #
@@ -215,21 +230,21 @@
 
 !SLIDE bullets smbullets
 
-# Then #
+# Past #
 
 <img src="horse-and-cart.jpg" alt="Horse and cart" />
 
 * AWS based
 * Lots of manual testing before deployment
 * Production deployment once or twice a week
-* Deployment was basic shell scripts
-* Environments out of sync
+* Deployment was basic shell scripts and a bit voodoo-esque
+* Difficulty keeping environments in sync
 * Devs had limited responsibility after commit
 
 
 !SLIDE bullets incremental
 
-# Now #
+# Present #
 
 * <img src="astro-boy.png" alt="Astro boy" />
 
@@ -242,7 +257,7 @@
 
 # Development #
 
-* AWS based
+* Still AWS based
 * Follow the 'Github flow' process
 * Take full advantage of Github's pull request system
 * Use git commit tags for clarity e.g. [api, db_schema]
@@ -292,7 +307,8 @@
 
 !SLIDE bullets smbullets
 
-.notes RDS not used to cross region replication can occur
+.notes RDS not used to cross region replication can occur,
+Why Munin ?  No DB required, just Perl with RRDtool
 
 # Technology #
 
