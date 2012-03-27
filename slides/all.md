@@ -235,8 +235,8 @@
 
 <img src="playup-ios-logo.png" alt="PlayUp iOS logo" />
 
-* PlayUp iOS app (v2 now out)
-* PlayUp Android app (coming soon)
+* PlayUp iOS app
+* PlayUp Android app
 * A number of internal R&D apps
 
 
@@ -256,7 +256,7 @@
 # Current Infrastructure #
 
 
-!SLIDE bullets
+!SLIDE bullets smbullets
 
 .notes We have two SDP boxes in two different AWS regions
 
@@ -267,12 +267,12 @@
 * Two AWS instances - one in us-west-1 and another in eu-west-1
 * Handles incoming XML from data providers
 * Routes the XML to the appropriate server and end point
-* Archives XML older than 24 hours, nice nad neat
+* Archives XML older than 24 hours, nice and neat
 * We can receive up to 3GB of XML a day
 * Some providers send XML every 20 seconds (lots of dupes)
 
 
-!SLIDE bullets
+!SLIDE bullets smbullets
 
 # Current Infrastructure #
 
@@ -332,9 +332,9 @@ and how we work now
 * AWS based
 * Very little automated testing
 * Production deployment once or twice a week
-* Deployment was basic shell scripts and a bit voodoo-esque<br/>and not under source control *gasp*
+* Deployment was basic shell scripts and a bit voodoo-esque<br/>(not under source control \*gasp\*)
 * Difficulty keeping environments in sync
-* Devs had limited responsibility after commit
+* Devs had limited input / responsibility after commit
 
 
 !SLIDE
@@ -358,7 +358,7 @@ and how we work now
 * Use git commit tags for clarity e.g. [api, db_schema]
 * Jenkins CI performs all our tests via a build pipeline
 * Automated UAT deployment upon green light
-* Use of build lights, CCMenu offline CI notifications
+* Use of build lights, CCMenu out-of-office CI notifications
 
 
 !SLIDE bullets smbullets
@@ -395,9 +395,9 @@ Putting OS holy wars aside, maintaining consistency in your environments is impo
 
 # Switching to Ubuntu 10.04 #
 
-* Canonical provided community Ubuntu AMI's<br/>(we where home grown CentOS)
+* Canonical provided community Ubuntu AMIs<br/>(we where using home grown CentOS AMIs)
 * Upstart out-of-the-box
-* Suits our software requirements better
+* Suits our software requirements more accurately
 * Remain consistent going forward
 
 
@@ -407,7 +407,8 @@ Putting OS holy wars aside, maintaining consistency in your environments is impo
 
 * Manually add more servers as we process more
 * Automatically add more servers when demand escalates
-* Allows us to drink more coffee :)
+* Automatically terminate servers when not needed
+* Allows us to drink more coffee / beer :)
 
 
 !SLIDE bullets
@@ -474,7 +475,7 @@ Puppet and chef allows a Dev to solve the problem of server setup using their fa
 
 * Incredibly rewarding being involved with infrastructure and code
 * Sharing deployment makes you think carefully about commits
-* The ever shifting invisible line of responsibility.
+* The ever shifting invisible line of responsibility
 * Cloud computing makes the question of responsibility even more difficult.<br/>I can accidentally **destroy** a server with a few clicks!
 * Tools like Puppet and Chef allow Devs to better<br/>understand infrastructre setup
 * Devs need to be acutely aware of affecting performance<br/>and system integrity when deloying
