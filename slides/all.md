@@ -51,8 +51,16 @@
 * PlayUp Android app (coming soon)
 * A number of internal R&D apps
 
-ADD SCREENSHOTS
 
+!SLIDE
+
+.notes iOS app and some secret squirrel stuff
+
+<img src="playup-ios-1.jpg" alt="PlayUp iOS app" height="470" />
+<img src="playup-ios-2.jpg" alt="PlayUp iOS app" height="470" />
+<img src="playup-ios-3.jpg" alt="PlayUp iOS app" height="470" />
+
+<img src="secret-squirrel.png" alt="Secret Squirrel" height="175" />
 
 !SLIDE bullets
 
@@ -225,7 +233,13 @@ DIAGRAMS HERE
 
 !SLIDE
 
-# Setup #
+.notes Lets talk about developmet and deployment,
+how we used to work
+and how we work now
+
+# Development & Deployment #
+
+## Past & present ##
 
 
 !SLIDE bullets smbullets
@@ -234,10 +248,12 @@ DIAGRAMS HERE
 
 <img src="horse-and-cart.jpg" alt="Horse and cart" />
 
+FIX HEIGHT
+
 * AWS based
-* Lots of manual testing before deployment
+* Very little automated testing
 * Production deployment once or twice a week
-* Deployment was basic shell scripts and a bit voodoo-esque
+* Deployment was basic shell scripts and a bit voodoo-esque<br/>and not under source control *gasp*
 * Difficulty keeping environments in sync
 * Devs had limited responsibility after commit
 
@@ -270,6 +286,8 @@ DIAGRAMS HERE
 
 # Production deployment #
 
+FIX bullet points
+
 * Shared / rotating role between team members
 * From commit to production in under 30 mins
 * Deployment is a push button affair
@@ -292,17 +310,58 @@ DIAGRAMS HERE
 
 # Future setup #
 
+# What's brewing ? #
+
 * <img src="back-to-the-future.jpg" alt="Back to the Future" />
 
 
-!SLIDE bullets smbullets
+!SLIDE bullets
 
-# Future / very soon #
+.notes CentOS AMI's had to be built by hand,
+Upstart is great, starts a service and will keep an eye on it,
+We find more up-to-date packages in Ubuntu,
+Putting OS holy wars aside, maintaining consistency in your environments is important
 
-* Switch to Ubuntu 10.04
-* Take full advantage of AWS auto scaling
-* Full Puppet / Chef server provisioning
+# Switching to Ubuntu 10.04 #
+
+* Canonical provided community Ubuntu AMI's<br/>(we where home grown CentOS)
+* Upstart out-of-the-box
+* Suits our software requirements better
+* Remain consistent going forward
+
+
+!SLIDE bullets
+
+# AWS auto scaling #
+
+* Manually add more servers as we process more
+* Automatically add more servers when demand escalates
+
+
+!SLIDE bullets
+
+.notes Need a new server, easy!  
+  Just select a preexisting configuration or pick and choose a new one
+
+# Puppet / Chef provisioning #
+
+* Need a new server ? Easy!
+* Pick and choose components and build a new system
+* Deploy server configuration as part of code base
+
+
+!SLIDE bullets
+
+.notes Deliver real-time events via PUB/SUB or similar mechanism,
+  Gets you even closer to the action,
+  Support as many languages possible.. we are quite a fair away along with this,
+  Increase the depth of information we provide in our API without adversely affecting performance
+
+# Future Sports Data #
+
 * Real-time sport events using PUB/SUB
+* Support as many languages as possible
+* Increase depth of information in our API
 
 
 !SLIDE bullets smbullets
@@ -322,16 +381,6 @@ Why Munin ?  No DB required, just Perl with RRDtool
 
 !SLIDE bullets
 
-# OpsDev #
-
-* Valuable being fully aware of environment
-* Sharing deployment makes you think carefully about commits
-* Ongoing invisible line of responsibility.  Good & bad.
-* Personally feel more comfortable knowing entire setup
-
-
-!SLIDE bullets
-
 # Challenges #
 
 * Incoming sport XML accuracy
@@ -343,9 +392,20 @@ Why Munin ?  No DB required, just Perl with RRDtool
 
 !SLIDE bullets
 
+# OpsDev #
+
+* Valuable being fully aware of environment
+* Sharing deployment makes you think carefully about commits
+* Ongoing invisible line of responsibility.  Good & bad.
+* Personally feel more comfortable knowing entire setup
+
+
+!SLIDE bullets
+
 # Thank-you! #
 
 * Github flow<br/>[http://scottchacon.com/2011/08/31/github-flow.html](http://scottchacon.com/2011/08/31/github-flow.html)
 * Github pull requests<br/>[http://help.github.com/pull-requests](http://help.github.com/pull-requests)
 * CCMenu<br/>[http://ccmenu.sourceforge.net](http://ccmenu.sourceforge.net)
 * rbenv<br/>[https://github.com/sstephenson/rbenv](https://github.com/sstephenson/rbenv)
+* upstart<br/>[http://upstart.ubuntu.com](http://upstart.ubuntu.com)
