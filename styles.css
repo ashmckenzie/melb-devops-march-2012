@@ -29,7 +29,8 @@ code {
   color: #AAA;
 }
 
-#background {
+#background,
+#background-lighter {
   width: 100%; 
   height: 100%; 
   position: absolute; 
@@ -39,6 +40,10 @@ code {
   z-index: -1
 }
 
+#background-lighter {
+  opacity: 0.2 !important;
+}  
+
 .stretch {
   width: 100%;
   height: 100%;
@@ -46,16 +51,6 @@ code {
 
 .slide {
   z-index: 1;
-}
-
-#preso div.code {
-  position: relative;
-  top: -28px;
-}
-
-#preso div.code pre {
-  padding-top: 0;
-  margin-top: 0;
 }
 
 .main .content > ul > li > ul > li { 
@@ -90,6 +85,3 @@ code {
   left: 300px;
   position: relative;
 }
-
-.sh_javascript span.sh_string {
-  color: #000 !important;

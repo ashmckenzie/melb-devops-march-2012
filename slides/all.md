@@ -8,6 +8,8 @@
 
 
 !SLIDE bullets
+
+.notes Developing software I found was more rewarding for me, but still really enjoyed getting down and dirty at the OS level
   
 # About me #
 
@@ -20,25 +22,208 @@
 
 !SLIDE bullets
 
-<img src="playup-logo.png" alt="PlayUp logo" />
+<img src="playup-logo.png" alt="PlayUp logo" height="60" />
 
-* Offices in eight countries
-* We're obsessed with sport, ALL sport!
 * We build applications and games around live sport
+* We're obsessed with sport, ALL sport!
+* Offices in eight countries
 * Majority of development in Melbourne office
-* Just released v2 of our iOS app
+* Just released v2 of our iOS app, WOOT!
 * Web app [http://beta.playup.com](http://beta.playup.com)
-* Android app coming
+* Android app (coming soon)
 
 
 !SLIDE bullets smbullets
 
 # Sports Data Team #
 
-* Five of us, all in Melbourne
+* Team of five, all in Melbourne
 * Develop Sports Data API
 * Process incoming sport XML <br/>from five providers<br/>for nine sports<br/>with 54 leagues
+* Equates to roughly 25,000 contests a year
 * Constantly adding new sports and leagues
+
+
+!SLIDE bullets smbullets
+
+.notes AWS ELB is great in it's simplicity and easy to setup but is pretty limited
+
+# JSON API #
+
+* Consistent across all sports, RESTful and<br/>self discoverable
+* Each sport, league, round and constest has a unique UID<br/>- great for caching
+* Utilise HTTP Accept header for versioning
+* Rails based
+* Use (and love) Varnish
+* Utilise AWS ELB, not too bad
+
+
+!SLIDE
+
+# Sample JSON #
+
+## Cricket contest ##
+
+.notes :type defines the HTTP Content-Type header
+
+!SLIDE[tpl=code]
+
+<div style="width: 1024px; height: 740px; position: relative; top: -60px; overflow-y: scroll; overflow-x: hidden">
+  <pre>
+    {
+    ":self": "http://some.server.com/contests/20110159536",
+    ":uid": "contest-20110159536",
+    ":type": "application/vnd.playup.sport.contest.cricket.test+json",
+    "contest_details": {
+      ":self": "http://some.server.com/contest_details/20110159536",
+      ":uid": "contest_details-20110159536",
+      ":type": "application/vnd.playup.sport.contest_detail.cricket.test+json"
+    },
+    "scheduled_start_time": "2012-03-22T21:30:00Z",
+    "start_time": "2012-03-22T21:30:00Z",
+    "last_modified": "2012-03-27T02:43:27Z",
+    "title": "New Zealand vs South Africa",
+    "short_title": "NZ vs SA",
+    "round_name": "MAR",
+    "competition_name": "Test Cricket",
+    "sport_name": "Cricket",
+    "annotation": "4th",
+    "ancestors": [
+      {
+        ":self": "http://some.server.com/rounds/2177",
+        ":uid": "round-2177",
+        ":type": "application/vnd.playup.sport.round+json"
+      },
+      {
+        ":self": "http://some.server.com/leagues/95",
+        ":uid": "competition-95",
+        ":type": "application/vnd.playup.sport.competition+json"
+      },
+      {
+        ":self": "http://some.server.com/sports/1",
+        ":uid": "sport-1",
+        ":type": "application/vnd.playup.sport.sport.cricket+json"
+      },
+      {
+        ":self": "http://some.server.com/sports",
+        ":uid": "sports",
+        ":type": "application/vnd.playup.sport.sports+json"
+      }
+    ],
+    "scores": [
+      {
+        "total": 106,
+        "wickets": 5,
+        "player": {
+          "firstName": "Kane",
+          "lastName": "Williamson",
+          "role": "batsman",
+          "stats": "61(125)"
+        },
+        "striker": {
+          "first_name": "Kane",
+          "last_name": "Williamson",
+          "stats": "61(125)"
+        },
+        "non_striker": {
+          "first_name": "Kruger",
+          "last_name": "Wyk",
+          "stats": "7(28)"
+        },
+        "summary": "106/5",
+        "team": {
+          ":self": "http://some.server.com/teams/21",
+          ":uid": "team-21",
+          ":type": "application/vnd.playup.sport.team+json",
+          "name": "New Zealand",
+          "short_name": "NZ",
+          "nick_name": "",
+          "logos": {
+            "header": [
+              {
+                "density": "low",
+                "href": "http://some.server.com/team-logos/cricket/cricket_new_zealand_nz_70x46.png"
+              },
+              {
+                "density": "medium",
+                "href": "http://some.server.com/team-logos/cricket/cricket_new_zealand_nz_105x69.png"
+              },
+              {
+                "density": "high",
+                "href": "http://some.server.com/team-logos/cricket/cricket_new_zealand_nz_140x92.png"
+              }
+            ],
+            "calendar": [
+              {
+                "density": "low",
+                "href": "http://some.server.com/team-logos/cricket/cricket_new_zealand_nz_35x23.png"
+              },
+              {
+                "density": "medium",
+                "href": "http://some.server.com/team-logos/cricket/cricket_new_zealand_nz_53x35.png"
+              },
+              {
+                "density": "high",
+                "href": "http://some.server.com/team-logos/cricket/cricket_new_zealand_nz_70x46.png"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "total": 189,
+        "wickets": 3,
+        "summary": "189",
+        "team": {
+          ":self": "http://some.server.com/teams/20",
+          ":uid": "team-20",
+          ":type": "application/vnd.playup.sport.team+json",
+          "name": "South Africa",
+          "short_name": "SA",
+          "nick_name": "",
+          "logos": {
+            "header": [
+              {
+                "density": "low",
+                "href": "http://some.server.com/team-logos/cricket/cricket_south_africa_sa_70x46.png"
+              },
+              {
+                "density": "medium",
+                "href": "http://some.server.com/team-logos/cricket/cricket_south_africa_sa_105x69.png"
+              },
+              {
+                "density": "high",
+                "href": "http://some.server.com/team-logos/cricket/cricket_south_africa_sa_140x92.png"
+              }
+            ],
+            "calendar": [
+              {
+                "density": "low",
+                "href": "http://some.server.com/team-logos/cricket/cricket_south_africa_sa_35x23.png"
+              },
+              {
+                "density": "medium",
+                "href": "http://some.server.com/team-logos/cricket/cricket_south_africa_sa_53x35.png"
+              },
+              {
+                "density": "high",
+                "href": "http://some.server.com/team-logos/cricket/cricket_south_africa_sa_70x46.png"
+              }
+            ]
+          }
+        }
+      }
+    ],
+    "clock": {
+      "overs": "45.0",
+      "run_rate": "2.35",
+      "last_ball": "1",
+      "annotation": "play in progress",
+      "summary": "Ov:45.0   RR:2.35   LastBall:1"
+    }
+  }
+  </pre>
+</div>
 
 
 !SLIDE bullets
@@ -47,7 +232,7 @@
 
 <img src="playup-ios-logo.png" alt="PlayUp iOS logo" />
 
-* PlayUp iOS app
+* PlayUp iOS app (v2 now out)
 * PlayUp Android app (coming soon)
 * A number of internal R&D apps
 
@@ -73,162 +258,6 @@
 !SLIDE
 
 DIAGRAMS HERE
-
-
-!SLIDE bullets smbullets
-
-# JSON API #
-
-* Consistent across all sports, RESTful and<br/>self discoverable
-* Each sport, league, round and constest has a unique UID
-* Utilises HTTP Accept header for versioning
-* Rails based
-* Use (and love) Varnish
-
-
-!SLIDE
-
-.notes some elements have been removed
-
-# Sample JSON #
-
-## Cricket contest ##
-
-
-!SLIDE[tpl=code]
-
-    @@@ javascript
-    {
-      ":self": "http://some.server.com/contests/20110159536",
-      ":uid": "contest-20110159536",
-      ":type": "application/vnd.playup.sport.contest.cricket.test+json",
-      "scheduled_start_time": "2012-03-22T21:30:00Z",
-      "start_time": "2012-03-22T21:30:00Z",
-      "title": "New Zealand vs South Africa",
-      "competition_name": "Test Cricket",
-      "scores": [
-        {
-          "total": 1,
-          "wickets": 0,
-          "player": {
-            "firstName": "Daniel",
-            "lastName": "Flynn",
-            "role": "batsman",
-            "stats": "0(6)"
-          },
-          "striker": {
-            "first_name": "Daniel",
-            "last_name": "Flynn",
-            "stats": "0(6)"
-          },
-          "non_striker": {
-            "first_name": "Martin",
-            "last_name": "Guptill",
-            "stats": "0(7)"
-          },
-          "summary": "1/0",
-          "team": {
-            ":self": "http://some.server.com/teams/21",
-            ":uid": "team-21",
-            ":type": "application/vnd.playup.sport.team+json",
-            "name": "New Zealand",
-            "short_name": "NZ",
-            "nick_name": "",
-            "logos": {
-              "header": [
-                {
-                  "density": "low",
-                  "href": "http://sdimages.playupgp.com/team-logos/cricket/cricket_new_zealand_nz_70x46.png"
-                },
-                {
-                  "density": "medium",
-                  "href": "http://sdimages.playupgp.com/team-logos/cricket/cricket_new_zealand_nz_105x69.png"
-                },
-                {
-                  "density": "high",
-                  "href": "http://sdimages.playupgp.com/team-logos/cricket/cricket_new_zealand_nz_140x92.png"
-                }
-              ],
-              "calendar": [
-                {
-                  "density": "low",
-                  "href": "http://sdimages.playupgp.com/team-logos/cricket/cricket_new_zealand_nz_35x23.png"
-                },
-                {
-                  "density": "medium",
-                  "href": "http://sdimages.playupgp.com/team-logos/cricket/cricket_new_zealand_nz_53x35.png"
-                },
-                {
-                  "density": "high",
-                  "href": "http://sdimages.playupgp.com/team-logos/cricket/cricket_new_zealand_nz_70x46.png"
-                }
-              ]
-            }
-          }
-        },
-        {
-          "total": 189,
-          "wickets": 3,
-          "player": {
-            "firstName": "Morne",
-            "lastName": "Morkel",
-            "role": "bowler",
-            "stats": "0/0(1.1)"
-          },
-          "bowler": {
-            "first_name": "Morne",
-            "last_name": "Morkel",
-            "stats": "0/0(1.1)"
-          },
-          "summary": "189",
-          "team": {
-            ":self": "http://some.server.com/teams/20",
-            ":uid": "team-20",
-            ":type": "application/vnd.playup.sport.team+json",
-            "name": "South Africa",
-            "short_name": "SA",
-            "nick_name": "",
-            "logos": {
-              "header": [
-                {
-                  "density": "low",
-                  "href": "http://sdimages.playupgp.com/team-logos/cricket/cricket_south_africa_sa_70x46.png"
-                },
-                {
-                  "density": "medium",
-                  "href": "http://sdimages.playupgp.com/team-logos/cricket/cricket_south_africa_sa_105x69.png"
-                },
-                {
-                  "density": "high",
-                  "href": "http://sdimages.playupgp.com/team-logos/cricket/cricket_south_africa_sa_140x92.png"
-                }
-              ],
-              "calendar": [
-                {
-                  "density": "low",
-                  "href": "http://sdimages.playupgp.com/team-logos/cricket/cricket_south_africa_sa_35x23.png"
-                },
-                {
-                  "density": "medium",
-                  "href": "http://sdimages.playupgp.com/team-logos/cricket/cricket_south_africa_sa_53x35.png"
-                },
-                {
-                  "density": "high",
-                  "href": "http://sdimages.playupgp.com/team-logos/cricket/cricket_south_africa_sa_70x46.png"
-                }
-              ]
-            }
-          }
-        }
-      ],
-      "clock": {
-        "overs": "2.1",
-        "run_rate": "0.46",
-        "last_ball": "0",
-        "annotation": "play in progress",
-        "summary": "Ov:2.1   RR:0.46   LastBall:0"
-      }
-    }
 
 
 !SLIDE

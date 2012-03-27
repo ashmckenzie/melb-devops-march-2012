@@ -1,4 +1,4 @@
-<div id="background">
+<div id="background-lighter">
   <img src="file/bright-water.jpg" class="stretch" alt="" />
 </div>
 

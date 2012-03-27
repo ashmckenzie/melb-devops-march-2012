@@ -1,89 +1,152 @@
-
 {
-  ":self": "http://sports.playupgp.com/getMatch.php?matchid=20110159536",
-  "id": 20110159536,
-  "gameDateStartUTC": "2012-03-22T21:30:00Z",
-  "actualDateStartUTC": "2012-03-22T21:30:00Z",
-  "gameDateEndUTC": null,
-  "updatedAtUTC": "2012-03-26T05:12:54Z",
-  "status": "Live",
-  "statusId": 2,
-  "annotations": {
-    "group": ["3rd"]
+  ":self": "http://sports.playupgp.com/contests/20110159536",
+  ":uid": "contest-20110159536",
+  ":type": "application/vnd.playup.sport.contest.cricket.test+json",
+  "contest_details": {
+    ":self": "http://sports.playupgp.com/contest_details/20110159536",
+    ":uid": "contest_details-20110159536",
+    ":type": "application/vnd.playup.sport.contest_detail.cricket.test+json"
   },
-  "competition": {
-    ":self": "http://sports.playupgp.com/leagues/95",
-    "id": 95,
-    "name": "Test Cricket",
-    "shortName": "Test Cricket",
-    ":rounds": "http://sports.playupgp.com/rounds?sport=1&league=95",
-    "sport": {
-      ":self": "http://sports.playupgp.com/sports/1",
-      "id": 1,
-      "name": "Cricket",
-      "shortName": "cricket"
-    }
-  },
-  "teams": [
+  "scheduled_start_time": "2012-03-22T21:30:00Z",
+  "start_time": "2012-03-22T21:30:00Z",
+  "last_modified": "2012-03-27T02:43:27Z",
+  "title": "New Zealand vs South Africa",
+  "short_title": "NZ vs SA",
+  "round_name": "MAR",
+  "competition_name": "Test Cricket",
+  "sport_name": "Cricket",
+  "annotation": "4th",
+  "ancestors": [
     {
-      "id": 21,
-      "name": "New Zealand",
-      "shortName": "NZ",
-      "score": {
-        "total": 275,
-        "wickets": 9,
-        "player": null,
-        "summary": "275"
-      },
-      "has_logos": true,
-      "logos": [
-        {
-          "href": "http://sdimages.playupgp.com/team_logos/cricket_new_zealand_nz_sml.png",
-          "rel": "iphone-match-normal",
-          "type": "image/png"
-        },
-        {
-          "href": "http://sdimages.playupgp.com/team_logos/cricket_new_zealand_nz.png",
-          "rel": "iphone-match-retina",
-          "type": "image/png"
-        }
-      ]
+      ":self": "http://sports.playupgp.com/rounds/2177",
+      ":uid": "round-2177",
+      ":type": "application/vnd.playup.sport.round+json"
     },
     {
-      "id": 20,
-      "name": "South Africa",
-      "shortName": "SA",
-      "score": {
-        "total": 75,
-        "wickets": 0,
-        "player": {
-          "firstName": "Graeme",
-          "lastName": "Smith",
-          "role": "batsman",
-          "stats": "34(49)"
-        },
-        "summary": "75/0"
+      ":self": "http://sports.playupgp.com/leagues/95",
+      ":uid": "competition-95",
+      ":type": "application/vnd.playup.sport.competition+json"
+    },
+    {
+      ":self": "http://sports.playupgp.com/sports/1",
+      ":uid": "sport-1",
+      ":type": "application/vnd.playup.sport.sport.cricket+json"
+    },
+    {
+      ":self": "http://sports.playupgp.com/sports",
+      ":uid": "sports",
+      ":type": "application/vnd.playup.sport.sports+json"
+    }
+  ],
+  "scores": [
+    {
+      "total": 106,
+      "wickets": 5,
+      "player": {
+        "firstName": "Kane",
+        "lastName": "Williamson",
+        "role": "batsman",
+        "stats": "61(125)"
       },
-      "has_logos": true,
-      "logos": [
-        {
-          "href": "http://sdimages.playupgp.com/team_logos/cricket_south_africa_sa_sml.png",
-          "rel": "iphone-match-normal",
-          "type": "image/png"
-        },
-        {
-          "href": "http://sdimages.playupgp.com/team_logos/cricket_south_africa_sa.png",
-          "rel": "iphone-match-retina",
-          "type": "image/png"
+      "striker": {
+        "first_name": "Kane",
+        "last_name": "Williamson",
+        "stats": "61(125)"
+      },
+      "non_striker": {
+        "first_name": "Kruger",
+        "last_name": "Wyk",
+        "stats": "7(28)"
+      },
+      "summary": "106/5",
+      "team": {
+        ":self": "http://sports.playupgp.com/teams/21",
+        ":uid": "team-21",
+        ":type": "application/vnd.playup.sport.team+json",
+        "name": "New Zealand",
+        "short_name": "NZ",
+        "nick_name": "",
+        "logos": {
+          "header": [
+            {
+              "density": "low",
+              "href": "http://sdimages.playupgp.com/team-logos/cricket/cricket_new_zealand_nz_70x46.png"
+            },
+            {
+              "density": "medium",
+              "href": "http://sdimages.playupgp.com/team-logos/cricket/cricket_new_zealand_nz_105x69.png"
+            },
+            {
+              "density": "high",
+              "href": "http://sdimages.playupgp.com/team-logos/cricket/cricket_new_zealand_nz_140x92.png"
+            }
+          ],
+          "calendar": [
+            {
+              "density": "low",
+              "href": "http://sdimages.playupgp.com/team-logos/cricket/cricket_new_zealand_nz_35x23.png"
+            },
+            {
+              "density": "medium",
+              "href": "http://sdimages.playupgp.com/team-logos/cricket/cricket_new_zealand_nz_53x35.png"
+            },
+            {
+              "density": "high",
+              "href": "http://sdimages.playupgp.com/team-logos/cricket/cricket_new_zealand_nz_70x46.png"
+            }
+          ]
         }
-      ]
+      }
+    },
+    {
+      "total": 189,
+      "wickets": 3,
+      "summary": "189",
+      "team": {
+        ":self": "http://sports.playupgp.com/teams/20",
+        ":uid": "team-20",
+        ":type": "application/vnd.playup.sport.team+json",
+        "name": "South Africa",
+        "short_name": "SA",
+        "nick_name": "",
+        "logos": {
+          "header": [
+            {
+              "density": "low",
+              "href": "http://sdimages.playupgp.com/team-logos/cricket/cricket_south_africa_sa_70x46.png"
+            },
+            {
+              "density": "medium",
+              "href": "http://sdimages.playupgp.com/team-logos/cricket/cricket_south_africa_sa_105x69.png"
+            },
+            {
+              "density": "high",
+              "href": "http://sdimages.playupgp.com/team-logos/cricket/cricket_south_africa_sa_140x92.png"
+            }
+          ],
+          "calendar": [
+            {
+              "density": "low",
+              "href": "http://sdimages.playupgp.com/team-logos/cricket/cricket_south_africa_sa_35x23.png"
+            },
+            {
+              "density": "medium",
+              "href": "http://sdimages.playupgp.com/team-logos/cricket/cricket_south_africa_sa_53x35.png"
+            },
+            {
+              "density": "high",
+              "href": "http://sdimages.playupgp.com/team-logos/cricket/cricket_south_africa_sa_70x46.png"
+            }
+          ]
+        }
+      }
     }
   ],
   "clock": {
-    "overs": "15.0",
-    "run_rate": "5.0",
+    "overs": "45.0",
+    "run_rate": "2.35",
     "last_ball": "1",
-    "annotation": "stumps",
-    "summary": "Ov:15.0   RR:5.0   LastBall:1"
+    "annotation": "play in progress",
+    "summary": "Ov:45.0   RR:2.35   LastBall:1"
   }
 }
