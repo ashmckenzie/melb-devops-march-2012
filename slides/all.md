@@ -249,11 +249,59 @@
 
 !SLIDE bullets
 
-# Infrastructure #
+# Current Infrastructure #
 
-* Importers
-* API boxes
-* Redundancy across regions / MySQL
+
+!SLIDE bullets
+
+.notes We have two SDP boxes in two different AWS regions
+
+# Current Infrastructure #
+
+## SDP - Sports Data Procurement ##
+
+* Two AWS instances - one in us-west-1 and another in eu-west-1
+* Handles incoming XML from data providers
+* Routes the XML to the appropriate server and end point
+* Archives XML older than 24 hours, nice nad neat
+* We can receive up to 3GB of XML a day
+* Some providers send XML every 20 seconds (lots of dupes)
+
+
+!SLIDE bullets
+
+# Current Infrastructure #
+
+## Importer ##
+
+* Two AWS instances in us-east-1
+* Processes XML sent from SDP
+* Extracts fixtures and live sport data
+* Handles a myriad of XML structures, can be time consuming
+* Creates new Teams as necessary
+* Extracts events e.g. rebound, steal, 3 points<br/>(still brewing)
+* Writes to MySQL master database
+
+
+!SLIDE bullets
+
+# Current Infrastructure #
+
+.notes self-discoverable meaning JSON has links to other JSON
+
+## API ##
+
+* Two AWS instances in us-west-1
+* RESTful, self-discoverable JSON API
+* AWS ELB -> Varnish -> nginx -> Passenger -> Rails
+* Vary our Cache-Control HTTP header depending on the content<br/>- short for live contests<br/>- longer for finished contests
+* Reads from replicated MySQL slave
+
+
+!SLIDE
+
+# Network diagram #
+
 
 !SLIDE[tpl=code]
 
@@ -306,7 +354,7 @@ FIX HEIGHT
 * Follow the 'Github flow' process
 * Take full advantage of Github's pull request system
 * Use git commit tags for clarity e.g. [api, db_schema]
-* Jenkins CI performs all our tests
+* Jenkins CI performs all our tests via a build pipeline
 * Automated UAT deployment upon green light
 * Use of build lights, CCMenu offline CI notifications
 
