@@ -311,11 +311,9 @@ FIX HEIGHT
 * Use of build lights, CCMenu offline CI notifications
 
 
-!SLIDE bullets 
+!SLIDE bullets smbullets
 
 # Production deployment #
-
-FIX bullet points
 
 * Shared / rotating role between team members
 * From commit to production in under 30 mins
@@ -324,12 +322,6 @@ FIX bullet points
 * We deploy frequently so:
   * Deployed code is small and easily reversible
   * Stay as close as practical to our UAT env
-
-
-!SLIDE bullets smbullets numbers
-
-# Production deployment #
-
 * Deploy sends email with git commit log
 * Service description JSON dropped upon success
 * <img src="service-description.jpg" alt="Service description" />
@@ -339,7 +331,7 @@ FIX bullet points
 
 # Future setup #
 
-# What's brewing ? #
+## What's brewing ? ##
 
 * <img src="back-to-the-future.jpg" alt="Back to the Future" />
 
@@ -365,12 +357,14 @@ Putting OS holy wars aside, maintaining consistency in your environments is impo
 
 * Manually add more servers as we process more
 * Automatically add more servers when demand escalates
+* Allows us to drink more coffee :)
 
 
 !SLIDE bullets
 
 .notes Need a new server, easy!  
   Just select a preexisting configuration or pick and choose a new one
+  Deploying configuration raises the age old question of what to do with credentials, but there are workarounds
 
 # Puppet / Chef provisioning #
 
@@ -386,7 +380,7 @@ Putting OS holy wars aside, maintaining consistency in your environments is impo
   Support as many languages possible.. we are quite a fair away along with this,
   Increase the depth of information we provide in our API without adversely affecting performance
 
-# Future Sports Data #
+# Sports Data future #
 
 * Real-time sport events using PUB/SUB
 * Support as many languages as possible
@@ -419,14 +413,41 @@ Why Munin ?  No DB required, just Perl with RRDtool
 * Reduce Jenkins CI processing time
 
 
-!SLIDE bullets
+!SLIDE bullets smbullets
 
-# OpsDev #
+.notes It's incredibly rewarding being involved in building and maintaining the infrastructure as well as writing and deploying the code,
+Sharing the deployment 'makes it real' and by that I mean you're now responsible for the outcome of the deployment during and after,
+Who is responsible for what is more and more becoming a difficult question
+Puppet and chef allows a Dev to solve the problem of server setup using their favourite language, lowers the bar
 
-* Valuable being fully aware of environment
+# DevOps: Thoughts #
+
+* Incredibly rewarding being involved with infrastructure and code
 * Sharing deployment makes you think carefully about commits
-* Ongoing invisible line of responsibility.  Good & bad.
-* Personally feel more comfortable knowing entire setup
+* The ever shifting invisible line of responsibility.
+* Cloud computing makes the question of responsibility even more difficult.<br/>I can accidentally **destroy** a server with a few clicks!
+* Tools like Puppet and Chef allow Devs to better<br/>understand infrastructre setup
+* Devs need to be acutely aware of affecting performance<br/>and system integrity when deloying
+* Deploying to a system you do not accurately understand<br/>should never happen!
+
+
+!SLIDE bullets incremental
+
+.notes If possible pair with a Dev or an Ops guru and get a better understanding of challenges he or she faces.
+Small changes to your process may make someone elses job much easier
+
+# DevOps: How we can improve #
+
+## 'Us' and 'them' talk limited but still exists ##
+
+* Break it down with some pairing<br/><br/><img src="break-it-down.jpg" alt="Break it down" />
+
+
+!SLIDE bullets incremental
+
+# DevOps: How we can improve #
+
+## Devs committing code ##
 
 
 !SLIDE bullets
