@@ -64,9 +64,10 @@
 
 ## Cricket contest ##
 
-.notes :type defines the HTTP Content-Type header
 
 !SLIDE[tpl=code]
+
+.notes :type defines the HTTP Content-Type header
 
 <div style="width: 1024px; height: 740px; position: relative; top: -60px; overflow-y: scroll; overflow-x: hidden">
   <pre>
@@ -230,6 +231,8 @@
 
 # Our clients #
 
+.notes some of the clients that consume our API
+
 <img src="playup-ios-logo.png" alt="PlayUp iOS logo" />
 
 * PlayUp iOS app (v2 now out)
@@ -246,6 +249,7 @@
 <img src="playup-ios-3.jpg" alt="PlayUp iOS app" height="470" />
 
 <img src="secret-squirrel.png" alt="Secret Squirrel" height="175" />
+
 
 !SLIDE bullets
 
