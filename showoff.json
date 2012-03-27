@@ -3,7 +3,8 @@
   "description": "",
   "author": "Ash McKenzie",
   "templates" : {
-    "default" : "default.tpl"
+    "default" : "default.tpl",
+    "code" : "code.tpl"
   },
   "sections": [
     { "section": "slides" }

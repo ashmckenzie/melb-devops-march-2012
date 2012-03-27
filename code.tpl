@@ -2,7 +2,7 @@
   <img src="file/bright-water.jpg" class="stretch" alt="" />
 </div>
 
-<div id="slide-~~~CURRENT_SLIDE~~~" class="main">
+<div id="slide-~~~CURRENT_SLIDE~~~" class="main code">
   ~~~CONTENT~~~
 <div>
 

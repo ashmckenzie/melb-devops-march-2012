@@ -16,12 +16,54 @@ h1, h2, h3, h4 {
   line-height: 1.3em;
 }
 
-#footer {
-  background: #FFF;
-  color: #CCC;
+pre.sh_sourceCode {
+  line-height: 22px;
+}
+  
+code {
+  font-size: 0.4em;
 }
 
-.content > ul {
+#footer {
+  background: transparent;
+  color: #AAA;
+}
+
+#background {
+  width: 100%; 
+  height: 100%; 
+  position: absolute; 
+  left: 0; 
+  top: 0; 
+  opacity: 0.6;
+  z-index: -1
+}
+
+.stretch {
+  width: 100%;
+  height: 100%;
+}
+
+.slide {
+  z-index: 1;
+}
+
+#preso div.code {
+  position: relative;
+  top: -28px;
+}
+
+#preso div.code pre {
+  padding-top: 0;
+  margin-top: 0;
+}
+
+.main .content > ul > li > ul > li { 
+  padding: 8px;
+}
+
+.content > ul,
+.content > ol {
   font-size: 2em ;
 }
 
@@ -39,7 +81,15 @@ h1, h2, h3, h4 {
   margin-left: 0 !important;
 }
 
-#slide-5,
+/*#slide-5,
 #slide-6 {
   margin-top: -50px;
+}*/
+
+#slide-13 .content > ul > li > ul > li {
+  left: 300px;
+  position: relative;
 }
+
+.sh_javascript span.sh_string {
+  color: #000 !important;
