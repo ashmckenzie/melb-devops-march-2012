@@ -287,11 +287,11 @@ FIX HEIGHT
 * Devs had limited responsibility after commit
 
 
-!SLIDE bullets incremental
+!SLIDE
 
 # Present #
 
-* <img src="astro-boy.png" alt="Astro boy" />
+<img src="astro-boy.png" alt="Astro boy" />
 
 
 !SLIDE bullets smbullets
@@ -327,13 +327,13 @@ FIX HEIGHT
 * <img src="service-description.jpg" alt="Service description" />
 
 
-!SLIDE bullets incremental
+!SLIDE
 
 # Future setup #
 
 ## What's brewing ? ##
 
-* <img src="back-to-the-future.jpg" alt="Back to the Future" />
+<img src="back-to-the-future.jpg" alt="Back to the Future" />
 
 
 !SLIDE bullets
@@ -447,10 +447,56 @@ Small changes to your process may make someone elses job much easier
 
 # DevOps: How we can improve #
 
-## Devs committing code ##
+## More cuddles ##
+
+* <img src="cuddles.jpg" alt="Cuddles" />
 
 
-!SLIDE bullets
+!SLIDE bullets smbullets
+
+# DevOps: How we can improve #
+
+## More cuddles ##
+
+* Communication really is the key
+* Myriad of ways to communicate, IRC is great!
+* Deployment email is a great way to communicate what has changed
+* A pre-deployment email about what is going to change is even better
+* Completely open up the monitoring system<br/>(within reason) so everyone has visibility
+* Display monitoring, system stats etc on a giant screen<br/>so it's impossible to miss
+
+!SLIDE 
+
+# Lastly #
+
+
+!SLIDE
+
+# DevOps: How we can improve #
+
+## Experiment and innovate, try Vagrant! ##
+
+<img src="hippie.png" alt="Vagrant" />
+
+
+!SLIDE bullets smbullets
+
+# DevOps: How we can improve #
+
+## Experiment and innovate, use Vagrant ##
+
+* Vagrant is a Ruby based gem that controls VirtualBox via its API
+* VirtualBox is a free cross platform virtualization solution<br/>(think VMWare workstation)
+* Easily experiment with Puppet / Chef and Operating Systems
+* Thrash and burn environments at will, risk free
+
+
+!SLIDE
+
+# And that's all! #
+
+
+!SLIDE bullets smbullets
 
 # Thank-you! #
 
@@ -459,3 +505,4 @@ Small changes to your process may make someone elses job much easier
 * CCMenu<br/>[http://ccmenu.sourceforge.net](http://ccmenu.sourceforge.net)
 * rbenv<br/>[https://github.com/sstephenson/rbenv](https://github.com/sstephenson/rbenv)
 * upstart<br/>[http://upstart.ubuntu.com](http://upstart.ubuntu.com)
+* Vagrant<br/>[http://vagrantup.com](http://vagrantup.com)
