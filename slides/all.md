@@ -9,8 +9,6 @@
 
 !SLIDE bullets
 
-.notes Developing software I found was more rewarding for me, but still really enjoyed getting down and dirty at the OS level
-  
 # About me #
 
 * Sys Admin nine or so years
@@ -46,8 +44,6 @@
 
 !SLIDE bullets smbullets
 
-.notes AWS ELB is great in it's simplicity and easy to setup but is pretty limited
-
 # JSON API #
 
 * Consistent across all sports, RESTful<br/>and discoverable
@@ -66,8 +62,6 @@
 
 
 !SLIDE[tpl=code]
-
-.notes :type defines the HTTP Content-Type header
 
 <div style="width: 1024px; height: 740px; position: relative; top: -60px; overflow-y: scroll; overflow-x: hidden">
   <pre>
@@ -231,8 +225,6 @@
 
 # Our clients #
 
-.notes some of the clients that consume our API
-
 <img src="playup-ios-logo.png" alt="PlayUp iOS logo" />
 
 * PlayUp iOS app
@@ -241,8 +233,6 @@
 
 
 !SLIDE
-
-.notes iOS app and some secret squirrel stuff
 
 <img src="playup-ios-1.jpg" alt="PlayUp iOS app" height="470" />
 <img src="playup-ios-2.jpg" alt="PlayUp iOS app" height="470" />
@@ -257,8 +247,6 @@
 
 
 !SLIDE bullets smbullets
-
-.notes We have two SDP boxes in two different AWS regions
 
 # Current Infrastructure #
 
@@ -291,8 +279,6 @@
 
 # Current Infrastructure #
 
-.notes discoverable meaning JSON has links to other JSON
-
 ## API ##
 
 * Two AWS instances in us-west-1
@@ -313,10 +299,6 @@
 
 
 !SLIDE
-
-.notes Lets talk about developmet and deployment,
-how we used to work
-and how we work now
 
 # Development & Deployment #
 
@@ -345,10 +327,6 @@ and how we work now
 
 
 !SLIDE bullets smbullets
-
-.notes Github flow master branch always deployable, 
-  pull requests great for code review, 
-  build lights are great - highly visible
 
 # Development #
 
@@ -388,14 +366,9 @@ and how we work now
 
 !SLIDE bullets
 
-.notes CentOS AMI's had to be built by hand,
-Upstart is great, starts a service and will keep an eye on it,
-We find more up-to-date packages in Ubuntu,
-Putting OS holy wars aside, maintaining consistency in your environments is important
-
 # Switching to Ubuntu 10.04 #
 
-* Canonical provided community Ubuntu AMIs<br/>(we where using home grown CentOS AMIs)
+* Canonical provided community Ubuntu AMIs<br/>(we were using home grown CentOS AMIs)
 * Upstart out-of-the-box
 * Suits our software requirements more accurately
 * Remain consistent going forward
@@ -413,10 +386,6 @@ Putting OS holy wars aside, maintaining consistency in your environments is impo
 
 !SLIDE bullets
 
-.notes Need a new server, easy!  
-  Just select a preexisting configuration or pick and choose a new one
-  Deploying configuration raises the age old question of what to do with credentials, but there are workarounds
-
 # Puppet / Chef provisioning #
 
 * Need a new server ? Easy!
@@ -426,11 +395,6 @@ Putting OS holy wars aside, maintaining consistency in your environments is impo
 
 !SLIDE bullets
 
-.notes Deliver real-time events via PUB/SUB or similar mechanism,
-  Gets you even closer to the action,
-  Support as many languages possible.. we are quite a fair away along with this,
-  Increase the depth of information we provide in our API without adversely affecting performance
-
 # Sports Data future #
 
 * Real-time sport events using PUB/SUB
@@ -439,9 +403,6 @@ Putting OS holy wars aside, maintaining consistency in your environments is impo
 
 
 !SLIDE bullets smbullets
-
-.notes RDS not used to cross region replication can occur,
-Why Munin ?  No DB required, just Perl with RRDtool
 
 # Technology #
 
@@ -466,11 +427,6 @@ Why Munin ?  No DB required, just Perl with RRDtool
 
 !SLIDE bullets smbullets
 
-.notes It's incredibly rewarding being involved in building and maintaining the infrastructure as well as writing and deploying the code,
-Sharing the deployment 'makes it real' and by that I mean you're now responsible for the outcome of the deployment during and after,
-Who is responsible for what is more and more becoming a difficult question
-Puppet and chef allows a Dev to solve the problem of server setup using their favourite language, lowers the bar
-
 # DevOps: Thoughts #
 
 * Incredibly rewarding being involved with infrastructure and code
@@ -478,14 +434,11 @@ Puppet and chef allows a Dev to solve the problem of server setup using their fa
 * The ever shifting invisible line of responsibility
 * Cloud computing makes the question of responsibility even more difficult.<br/>I can accidentally **destroy** a server with a few clicks!
 * Tools like Puppet and Chef allow Devs to better<br/>understand infrastructre setup
-* Devs need to be acutely aware of affecting performance<br/>and system integrity when deloying
+* Devs need to be acutely aware of affecting performance<br/>and system integrity when deploying
 * Deploying to a system you do not accurately understand<br/>should never happen!
 
 
 !SLIDE bullets incremental
-
-.notes If possible pair with a Dev or an Ops guru and get a better understanding of challenges he or she faces.
-Small changes to your process may make someone elses job much easier
 
 # DevOps: How we can improve #
 
