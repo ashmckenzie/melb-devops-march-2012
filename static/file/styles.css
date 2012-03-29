@@ -1,0 +1,98 @@
+h1 {
+  font-size: 4em;
+}
+
+h2 {
+  font-size: 3em;
+}
+
+h4 {
+  font-size: 1.15em;
+  text-align: center;
+}
+
+h1, h2, h3, h4 {
+  font-family: Georgia;
+  line-height: 1.3em;
+}
+
+pre.sh_sourceCode {
+  line-height: 22px;
+}
+  
+code {
+  font-size: 0.4em;
+}
+
+#footer {
+  background: transparent;
+  color: #AAA;
+}
+
+#background,
+#background-lighter {
+  width: 100%; 
+  height: 100%; 
+  position: absolute; 
+  left: 0; 
+  top: 0; 
+  opacity: 0.6;
+  z-index: -1
+}
+
+#background-lighter {
+  opacity: 0.2 !important;
+}  
+
+.stretch {
+  width: 100%;
+  height: 100%;
+}
+
+.slide {
+  z-index: 1;
+}
+
+.main .content > ul > li > ul > li { 
+  padding: 8px;
+}
+
+.content > ul,
+.content > ol {
+  font-size: 2em ;
+}
+
+#logo {
+  position: absolute;
+  right: 20px;
+  bottom: 30px;
+}
+
+/*#preso {
+  margin-top: 40px;
+}*/
+
+.bullets li {
+  margin-left: 0 !important;
+}
+
+/*#slide-17 {
+  margin-top: -50px;
+}
+
+#slide-29 {
+  margin-top: -160px;
+}
+
+#slide-30 {
+  margin-top: -160px;
+}
+
+#slide-33 {
+  margin-top: -160px;
+}*/
+
+#slide-20 .content > ul > li > ul > li {
+  left: 300px;
+  position: relative;
+}
