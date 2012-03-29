@@ -234,11 +234,11 @@
 
 !SLIDE
 
-<img src="playup-ios-1.jpg" alt="PlayUp iOS app" height="470" />
-<img src="playup-ios-2.jpg" alt="PlayUp iOS app" height="470" />
-<img src="playup-ios-3.jpg" alt="PlayUp iOS app" height="470" />
+<img src="playup-ios-1.jpg" alt="PlayUp iOS app" />
+<img src="playup-ios-2.jpg" alt="PlayUp iOS app" />
+<img src="playup-ios-3.jpg" alt="PlayUp iOS app" />
 
-<img src="secret-squirrel.png" alt="Secret Squirrel" height="175" />
+<img src="secret-squirrel.png" alt="Secret Squirrel" />
 
 
 !SLIDE bullets
@@ -295,8 +295,9 @@
 
 !SLIDE[tpl=code]
 
-<img src="sportsdata-prod.png" alt="Sports Data Production" width="1024" style="top: -360px; left: -25px; position: relative"/>
-
+<div>
+  <img src="sportsdata-prod.png" alt="Sports Data Production" />
+</div>
 
 !SLIDE
 

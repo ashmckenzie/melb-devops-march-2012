@@ -68,15 +68,15 @@ code {
   bottom: 30px;
 }
 
-#preso {
+/*#preso {
   margin-top: 40px;
-}
+}*/
 
 .bullets li {
   margin-left: 0 !important;
 }
 
-#slide-17 {
+/*#slide-17 {
   margin-top: -50px;
 }
 
@@ -90,7 +90,7 @@ code {
 
 #slide-33 {
   margin-top: -160px;
-}
+}*/
 
 #slide-20 .content > ul > li > ul > li {
   left: 300px;
